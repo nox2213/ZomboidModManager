@@ -1,0 +1,87 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:models="clr-namespace:ZomboidModManager.Models"
+        xmlns:local="clr-namespace:ZomboidModManager"
+        x:Class="ZomboidModManager.SteamCollectionWindow"
+        x:DataType="local:SteamCollectionWindow"
+        Title="Steam-Kollektion Demo"
+        Width="900" Height="600">
+
+    <DockPanel>
+        <!-- Top Section -->
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" HorizontalAlignment="Center" Margin="10">
+            <TextBox Name="UrlTextBox" Width="300" Watermark="Steam-Kollektion-URL eingeben..." />
+            <Button Content="OK" Margin="10,0,0,0" Click="OnOkClick" />
+        </StackPanel>
+
+        <!-- Bottom Section -->
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+            <Button Content="Write Workshop ID's" Click="OnWriteWorkshopIDsClick" />
+        </StackPanel>
+
+        <!-- Main Grid -->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Left List -->
+            <ListBox Name="LeftListBox" ItemsSource="{Binding LeftMods}" Grid.Column="0" Margin="10" SelectionMode="Single">
+                <ListBox.ItemTemplate>
+                    <DataTemplate x:DataType="models:SteamCollectionItem">
+                        <Border Background="{Binding BackgroundColor}" BorderThickness="0,0,0,1" BorderBrush="Gray" Padding="10" Margin="0,0,0,5">
+                            <StackPanel Orientation="Horizontal" Spacing="10">
+                                <Image Source="{Binding ImageBitmap}" Width="64" Height="64" Stretch="UniformToFill" />
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Title}" FontWeight="Bold" FontSize="14" />
+                                    <TextBlock Text="{Binding Author}" FontStyle="Italic" FontSize="12" />
+                                    <TextBlock Text="{Binding ShortDescription}" TextWrapping="Wrap" FontSize="12" />
+                                    <TextBlock Text="View on Workshop"
+                                               Foreground="Blue"
+                                               Cursor="Hand"
+                                               Tag="{Binding WorkshopLink}"
+                                               PointerPressed="OnWorkshopLinkClick" />
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+            <!-- Arrow Buttons -->
+            <StackPanel Grid.Column="1" VerticalAlignment="Center" Spacing="5">
+                <Button Content="&#x25B6;" Width="40" Height="40" Click="OnMoveSelectedClick" />
+                <Button Content="&#x23ED;" Width="40" Height="40" Click="OnMoveAllClick" />
+                <Button Content="&#x25C0;" Width="40" Height="40" Click="OnMoveBackSelectedClick" />
+                <Button Content="&#x23EA;" Width="40" Height="40" Click="OnMoveBackAllClick" />
+            </StackPanel>
+
+            <!-- Right List -->
+            <ListBox Name="RightListBox" ItemsSource="{Binding RightMods}" Grid.Column="2" Margin="10" SelectionMode="Single">
+                <ListBox.ItemTemplate>
+                    <DataTemplate x:DataType="models:SteamCollectionItem">
+                        <Border Background="{Binding BackgroundColor}" BorderThickness="0,0,0,1" BorderBrush="Gray" Padding="10" Margin="0,0,0,5">
+                            <StackPanel Orientation="Horizontal" Spacing="10">
+                                <Image Source="{Binding ImageBitmap}" Width="64" Height="64" Stretch="UniformToFill" />
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Title}" FontWeight="Bold" FontSize="14" />
+                                    <TextBlock Text="{Binding Author}" FontStyle="Italic" FontSize="12" />
+                                    <TextBlock Text="{Binding ShortDescription}" TextWrapping="Wrap" FontSize="12" />
+                                    <TextBlock Text="View on Workshop"
+                                               Foreground="Blue"
+                                               Cursor="Hand"
+                                               Tag="{Binding WorkshopLink}"
+                                               PointerPressed="OnWorkshopLinkClick" />
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
+    </DockPanel>
+</Window>

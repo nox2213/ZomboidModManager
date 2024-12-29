@@ -1,0 +1,13 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="ZomboidModManager.IniInputWindow"
+        Title="Workshop IDs Verarbeiten"
+        Width="400" Height="200">
+    <StackPanel Margin="20" Spacing="10">
+        <TextBlock Name="InfoTextBlock" FontSize="14" TextWrapping="Wrap" />
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="10">
+            <Button Content="Abbrechen" Width="80" Click="OnCancelClick" />
+            <Button Content="OK" Width="80" Click="OnConfirmClick" />
+        </StackPanel>
+    </StackPanel>
+</Window>

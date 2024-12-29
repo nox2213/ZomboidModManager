@@ -1,0 +1,11 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="ZomboidModManager.LoadingWindow"
+        Title="Loading..."
+        Width="300" Height="100">
+    <Grid>
+        <TextBlock Text="Bitte warten, Daten werden geladen..."
+                   VerticalAlignment="Center" HorizontalAlignment="Center"
+                   FontSize="16" />
+    </Grid>
+</Window>

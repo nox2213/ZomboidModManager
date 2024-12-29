@@ -1,0 +1,53 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="ZomboidModManager.ServerIniWindow"
+        Title="Server INI Window">
+    <Grid>
+        <!-- Zentrierung des Inhalts -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- StackPanel mit Inhalt -->
+        <StackPanel Margin="20" Spacing="15" Grid.Row="1" Grid.Column="1">
+            <!-- Überschrift -->
+            <TextBlock Text="Bitte geben Sie Ihre Server-INI-Datei ein (INI- oder TXT-Format):"
+                       FontSize="16"
+                       FontWeight="Bold"
+                       HorizontalAlignment="Center"
+                       Margin="0,0,0,10" />
+
+            <!-- TextBox mit Durchsuchen-Button -->
+            <DockPanel LastChildFill="True">
+                <TextBox Name="IniPathTextBox"
+                         Width="300"
+                         Margin="0,0,10,0"
+                         DockPanel.Dock="Left" />
+                <Button Content="Durchsuchen"
+                        Width="100"
+                        DockPanel.Dock="Right"
+                        Click="OnBrowseClick" />
+            </DockPanel>
+
+            <!-- Buttons unterhalb der TextBox -->
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center"
+                        Spacing="10"
+                        Margin="0,10,0,0">
+                <Button Content="OK"
+                        Width="80"
+                        Click="OnOkClick" />
+                <Button Content="Abbrechen"
+                        Width="80"
+                        Click="OnCancelClick" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

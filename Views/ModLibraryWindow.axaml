@@ -1,0 +1,29 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="ZomboidModManager.ModLibraryWindow"
+        Title="Mod Library">
+
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="10">
+        <!-- Überschrift -->
+        <TextBlock Text="Mod Library Management" 
+                   FontSize="20" 
+                   HorizontalAlignment="Center" 
+                   Margin="0,20,0,20" />
+        
+        <!-- Platzhaltertext -->
+        <TextBlock Text="Hier kannst du deine Mod Library verwalten." 
+                   FontSize="16" 
+                   HorizontalAlignment="Center" />
+
+        <!-- Schließen Button -->
+        <Button Content="Schließen" 
+                Width="150" Height="40" 
+                HorizontalContentAlignment="Center" 
+                VerticalContentAlignment="Center"
+                HorizontalAlignment="Center"
+                Click="OnCloseClick" />
+    </StackPanel>
+</Window>

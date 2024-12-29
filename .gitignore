@@ -1,0 +1,6 @@
+bin/*
+Logs/*
+obj/*
+Saves_and_Output/*
+src/steamdmc/*
+src/WorkshopObjects/*
